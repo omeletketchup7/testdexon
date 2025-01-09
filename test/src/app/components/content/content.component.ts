@@ -1,57 +1,67 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
-  styleUrl: './content.component.css'
+  styleUrls: ['./content.component.css']
 })
-export class ContentComponent {
+export class ContentComponent implements OnInit {
+  private apiUrl = 'http://localhost:3000/INFOs'; // API URL
+  mockData: any[] = []; // Array to hold the mapped data
+  mockData2: any[] = []; // Array to hold the mapped data
+  idnew: any;
   
 
-  mockData: any = [
-    {
-      id:1,
-      line_number: "6-PL-J4N-01007",
-      location: "Dacon A",
-      from: "BLACK STARTCOOLED WELL FLUID FROM MDPP",
-      to: "TEST SEPARATOR,V-0111",
-      drawing_number: "MDA-D-B-26001-1-0-Rev00-2011",
-      service: "PL",
-      material: "Duplex Stainless Steel",
-      inservice_date: new Date("2020-01-01"),
-      pipe_size: 6,
-      original_thickness: 7.1,
-      stress: 20000,
-      joint_efficiency: 1,
-      ca: 3,
-      design_life: 25,
-      design_pressure: 1015,
-      operating_pressure: 327,
-      design_temperature: 140,
-      operating_temperature: 45
-    },
-    {
-      id:2,
-      line_number: "6-PL-J4N-01110",
-      location: "Dacon A",
-      from: "BLACK STARTCOOLED WELL FLUID FROM MDPP ",
-      to: "TEST SEPARATOR,V-0111",
-      drawing_number: "MDA-D-B-26001-1-0-Rev00-2011",
-      service: "PL",
-      material: "Duplex Stainless Steel",
-      inservice_date: new Date("2020-01-01"),
-      pipe_size: 6,
-      original_thickness: 7.1,
-      stress: 20000,
-      joint_efficiency: 1,
-      ca: 3,
-      design_life: 25,
-      design_pressure: 1015,
-      operating_pressure: 327,
-      design_temperature: 140,
-      operating_temperature: 35
-    }
-  ]
-  
+  constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    this.loadAllDataInfo(); // Fetch and map data on initialization
+  }
+
+  // Method to fetch all data from the API
+  getAllInfo(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/all`);
+  }
+
+  // Load and map data into mockData
+  loadAllDataInfo(): void {
+    this.getAllInfo().subscribe(
+      (response) => {
+        // Map the data into the mockData array
+        this.mockData = response.map((item) => ({
+          id: item._id,
+          line_number: item.line_number,
+          location: item.location,
+          from: item.from,
+          to: item.to,
+          drawing_number: item.drawing_number,
+          service: item.service,
+          material: item.material,
+          inService_date: item.inservice_date,
+          pipe_size: item.pipe_size,
+          original_thickness: item.original_thickness,
+          stress: item.stress,
+          joint_efficiency: item.joint_efficiency,
+          ca: item.ca,
+          design_life: item.design_life,
+          design_pressure: item.design_pressure,
+          operating_pressure: item.operating_pressure,
+          design_temperature: item.design_temperature,
+          operating_temperature: item.operating_temperature
+        }));
+        this.mockData2=this.mockData;
+        console.log(this.mockData); // Log the mapped data for debugging
+      },
+      (error) => {
+        console.error('Error fetching data:', error); // Handle errors
+      }
+    );
+  }
+
+  clickinfo(id:any):void{
+    this.idnew=id;
+  }
 
 }

@@ -39,7 +39,7 @@
                         <td>{{item.material}}</td>
                         <td style="height: 100% !important;">
                             <div style="display: flex; justify-content: center;">
-                                <button type="button" class="bt-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <button type="button" class="bt-info" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="clickinfo(i)">
                                     Info
                                 </button>
                                 
@@ -66,7 +66,69 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <app-formpipe></app-formpipe>
+                            
+                            <div class="container">
+                            <div class="ctn-left1">
+                                <label style="grid-area: 11l ;">Line number</label>
+                                <br>
+                                <label style="grid-area: 21l ;">From</label>
+                                <br>
+                                <label style="grid-area: 31l ;">Drawing number</label>
+                                <br>
+                                <label style="grid-area: 41l ;">Material</label>
+                                <br>
+                                <label style="grid-area: 51l ;">Pipe size</label>
+                                <br>
+                                <label style="grid-area: 61l ;">Stress</label>
+                                <br>
+                                <label style="grid-area: 71l ;">ca</label>
+                                <br>
+                                <label style="grid-area: 81l ;">design pressure</label>
+                                <br>
+                                <label style="grid-area: 91l ;">design temperature</label>
+                            </div>
+                            <div class="ctn-left2">
+                                <div  style="grid-area: 12l ;"> </div>
+                                <div  style="grid-area: 22l ;">   "</div>
+                                <div  style="grid-area: 32l ;">   "</div>
+                                <div  style="grid-area: 42l ;">   "</div>
+                                <div  style="grid-area: 52l ;">  </div>
+                                <div  style="grid-area: 62l ;">  </div>
+                                <div  style="grid-area: 72l ;">  </div>
+                                <div  style="grid-area: 82l ;">  </div>
+                                <div  style="grid-area: 92l ;">  </div>
+                            </div>
+                            <div class="ctn-right2">
+                                <label style="grid-area: 11r ;" >Location</label>
+                                <br>
+                                <label style="grid-area: 21r ;" >To</label>
+                                <br>
+                                <label style="grid-area: 31r ;" >Service</label>
+                                <br>
+                                <label style="grid-area: 41r ;" >Inservice date</label>
+                                <br>
+                                <label style="grid-area: 51r ;" >Original thickness</label>
+                                <br>
+                                <label style="grid-area: 61r ;" >Joint efficiency</label>
+                                <br>
+                                <label style="grid-area: 71r ;" >desigh life</label>
+                                <br>
+                                <label style="grid-area: 81r ;" >operating pressure</label>
+                                <br>
+                                <label style="grid-area: 91r ;" >operating temperature</label>
+                            </div>
+                            <div class="ctn-right1">
+                                <div  style="grid-area: 12r ;" type="text" placeholder="text" id=""></div>
+                                <div  style="grid-area: 22r ;" type="text" placeholder="text" id=""></div>
+                                <div  style="grid-area: 32r ;" type="number" placeholder="number"></div>     
+                                <div  style="grid-area: 42r ;" type="date"></div> 
+                                <div  style="grid-area: 52r ;" type="number" placeholder="number"></div>                      
+                                <div  style="grid-area: 62r ;" type="number" placeholder="number"></div>        
+                                <div  style="grid-area: 72r ;" type="number" placeholder="number"></div>        
+                                <div  style="grid-area: 82r ;" type="number" placeholder="number"></div> 
+                                <div  style="grid-area: 92r ;" type="number" placeholder="number"></div>   
+                            </div>
+                            </div>
                         </div>
                     </div>
                 </div>

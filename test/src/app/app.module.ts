@@ -7,6 +7,7 @@ import { ContentComponent } from './components/content/content.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FormpipeComponent } from './components/formpipe/formpipe.component';
 import { DetailpageComponent } from './detailpage/detailpage.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DetailpageComponent } from './detailpage/detailpage.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

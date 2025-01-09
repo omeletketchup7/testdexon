@@ -1,4 +1,4 @@
-<h2 style="margin: 20px 0 0 20px;">LINE NUMBER: <label style="color: rgb(66, 125, 180);">{{selectedData.line_number}}</label></h2>
+<h2 style="margin: 20px 0 0 20px;">LINE NUMBER: <label style="color: rgb(66, 125, 180);">{{cmlData[0].line_number}}</label></h2>
 <div class="container-detail">
     <div style="width:90vw;">
         <div class="topic" style="font: 1.7em sans-serif;">CML
@@ -15,13 +15,13 @@
                 <td class="td-detail"></td>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
+                <tr *ngFor="let item of cmlData;index as i">
+                    <td>{{item.cml_number}}</td>
+                    <td>{{item.description}}</td>
+                    <td>{{item.actual_diameter}}</td>
+                    <td>{{item.design_thickness}}</td>
+                    <td>{{item.structural_thickness}}</td>
+                    <td>{{item.required_thickness}}</td>
                     <td></td>
                 </tr>
             </tbody>
