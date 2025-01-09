@@ -1,0 +1,48 @@
+.right{
+    display: flex;
+    justify-content: self-end;
+}
+
+.flex{
+    display: flex;
+}
+
+.container{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "1left 2left 1right 2right";
+    display: grid;
+}
+
+.ctn-left1{
+    grid-area: 1left;
+    font: 24.3px sans-serif;
+    margin:2px 0 0 10px;
+}
+
+.ctn-left2{
+    grid-area: 2left;
+}
+
+.ctn-right1{
+    grid-area: 2right;
+}
+
+.ctn-right2{
+    grid-area: 1right;
+    font: 24.3px sans-serif;
+    margin:2px 0 0 10px;
+    
+    
+}
+
+
+input{
+    border-radius: 0;
+    width: 240px;
+    border-width: 1px;
+    
+}
+
+::placeholder{
+    color: rgb(211, 211, 211);
+}

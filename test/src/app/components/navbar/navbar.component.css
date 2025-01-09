@@ -1,0 +1,15 @@
+p{
+    margin: 0 0 0 20px;
+}
+
+.textnav{
+    
+    width: 100%;
+    background-color: rgb(206, 206, 206);
+    font: 1.5em sans-serif;
+    padding: 15px 0 15px 0;
+    border-style: solid;
+    border-width: 0 0 2px 0;
+    border-color: rgb(110, 110, 110);
+
+}

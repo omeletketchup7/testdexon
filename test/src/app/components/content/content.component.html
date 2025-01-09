@@ -1,0 +1,104 @@
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
+
+
+
+
+<div class="content">
+    <div class="container-content">
+        <div class="space-addpiping">
+            <button class="addpiping" data-bs-toggle="modal" data-bs-target="#addbt">Add Piping</button>
+        </div>
+        <div class="container-table">
+            <table class="table-pipe">
+                <thead>
+                    <th>Line number</th>
+                    <th>location</th>
+                    <th>from</th>
+                    <th>to</th>
+                    <th>Pipe size (inch)</th>
+                    <th>service</th>
+                    <th>material</th>
+                    <th></th>
+                </thead>
+
+
+
+                <tbody>
+                    <tr *ngFor="let item of mockData;index as i">
+                        <td>{{item.line_number}}</td>
+                        <td>{{item.location}}</td>
+                        <td>{{item.from}}</td>
+                        <td>{{item.to}}</td>
+                        <td>{{item.pipe_size}}</td>
+                        <td>{{item.service}}</td>
+                        <td>{{item.material}}</td>
+                        <td style="height: 100% !important;">
+                            <div style="display: flex; justify-content: center;">
+                                <button type="button" class="bt-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Info
+                                </button>
+                                
+                                    <button type="button" class="bt-info" routerLink="/detail/{{ item.id }}">
+                                        Detail
+                                    </button>
+                                
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+
+
+            <div class="modal fade modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable" id="exampleModal"
+                tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" >
+                    <div class="modal-content" style="border-radius: 0;">
+                        <div class="modal-header" style="background-color: rgb(206, 206, 206); border-radius: 0; border-width: 2px; border-color: black;" >
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">PIPING INFORMATION</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <app-formpipe></app-formpipe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable" id="addbt"
+                tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true" style="justify-items: center ; width: 100vw; position: fixed;left: calc(-50vw + 50%);right: calc(-50vw + 50%);margin-left: auto;margin-right: auto;top: 250px;">
+                <div class="modal-dialog"  style="display: inline-block;">
+                    <div class="modal-content" style="border-radius: 0;">
+                        <div class="modal-header" style="background-color: rgb(206, 206, 206); border-radius: 0; border-width: 2px; border-color: black;" >
+                            <h1 class="modal-title fs-5" id="ModalLabel">ADD PIPING DATA</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <app-formpipe></app-formpipe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
